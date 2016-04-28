@@ -1,0 +1,1 @@
+"# nodejs_board"  initgit add README.mdgit commit -m "first commit"git remote add origin https://github.com/grinvi04/nodejs_board.gitgit push -u origin master

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'/>
+    <script src="/javascripts/jquery-1.12.3.min.js" ></script>
+</head>
+<body>
+<h1><%= title %></h1>
+
+<a href="/board/write">글쓰기로 이동</a>
+<br>
+<br>
+
+<table border="1" class="table-hover table-responsive">
+    <thead>
+    <tr>
+        <td class="active">번호</td>
+        <td>제목</td>
+        <td>내용</td>
+    </tr>
+    </thead>
+    <tbody>
+
+    <%
+    for(var i=0; i<rows.length; i++)
+    {
+        var oneItem = rows[i];
+    %>
+    <tr>
+        <td><%=oneItem.BOARD_ID%></td>
+        <td><%=oneItem.TITLE%></td>
+        <td><%=oneItem.CONTENT%></td>
+    </tr>
+
+    <%
+    }
+    %>
+    </tbody>
+
+</table>
+
+</body>
+</html>

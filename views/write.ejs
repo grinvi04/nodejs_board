@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'/>
+    <script src="/javascripts/jquery-1.12.3.min.js" ></script>
+</head>
+<body>
+<h1><%= title %></h1>
+
+<a href="/board">목록으로 이동</a>
+<br>
+<br>
+
+<form id="boardForm" onclick="return onWriteSubmit()" method="post">
+    <table border="1">
+        <tr>
+            <td>작성자</td>
+            <td><input type="text" name="regId" id="regId"></td>
+        </tr>
+        <tr>
+            <td>제목</td>
+            <td><input type="text" name="title" id="title"></td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td><textarea name="content" id="content" cols="30" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">글쓰기</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<script>
+    function onWriteSubmit() {
+        if( $('#regId').val().trim() == "" ) {
+            var message = "아이디를 입력해주세요.";
+            $("#regId").val("");
+            $("#regId").focus();
+            alert(message);
+            return false;
+        }
+        if( $('#title').val().trim() == "" ) {
+            var message = "제목을 입력해주세요.";
+            $("#title").val("");
+            $("#title").focus();
+            alert(message);
+            return false;
+        }
+        if( $('#content').val().trim() == "" ) {
+            var message = "내용을 입력해주세요.";
+            $("#content").val("");
+            $("#content").focus();
+            alert(message);
+            return false;
+        }
+    }
+</script>
+
+</body>
+</html>
