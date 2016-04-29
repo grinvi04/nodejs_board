@@ -1,13 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
-var pool = mysql.createPool({
-    connectionLimit : 3,
-    host : '14.63.166.59',
-    user : 'ddingdong',
-    password : 'ddingdong1234',
-    database : 'ddingdong'
-});
 
 var squel2 = require('squel');
 
